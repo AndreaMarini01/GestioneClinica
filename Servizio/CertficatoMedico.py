@@ -1,6 +1,6 @@
 import pickle
 
-import Documento
+from Servizio.Documento import Documento
 
 
 class CertificatoMedico(Documento):

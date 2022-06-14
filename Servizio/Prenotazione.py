@@ -4,15 +4,15 @@ import datetime
 class Prenotazione:
 
     def __init__(self):
-        self.certificatoMedico
+        self.certificatoMedico=False
         self.cliente
         self.dataOra=datetime.datetime
         self.dottore
         self.durataVisita=datetime.time(0,15)
         self.note
-        self.ricettaMedica
-        self.visitaGenerica
-        self.tipoAppuntamento
+        self.ricettaMedica=False
+        self.visitaGenerica=False
+
 
     def setCliente(self,cliente):
         self.cliente=cliente
@@ -39,4 +39,5 @@ class Prenotazione:
         return self.dottore
 
     def getTipoAppuntamento(self):
-        return self.tipoAppuntamento
+        #return self.tipoAppuntamento
+        pass

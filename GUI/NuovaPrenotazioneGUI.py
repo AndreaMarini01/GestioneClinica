@@ -23,11 +23,3 @@ class NuovaPrenotazioneGUI(QDialog):
         self.close()
         return self.comboBox_2.currentText(), self.comboBox.currentText(), self.textEdit.toPlainText()
 
-
-
-
-
-
-
-
-

@@ -22,3 +22,6 @@ class ModificaPrenotazioneGUI(QDialog):
         self.nuovaPrenotazione.setWindowTitle("Modifica Prenotazione")
         self.nuovaPrenotazione.stampa()
         return self.comboBox.currentText()
+
+
+    def prenotazioneScelta(self):

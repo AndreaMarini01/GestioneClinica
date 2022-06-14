@@ -1,4 +1,4 @@
-from Servizio.CertificatoMedico import CertificatoMedico
+from Servizio.CertficatoMedico import CertificatoMedico
 
 
 class CertificatoMalattia(CertificatoMedico):

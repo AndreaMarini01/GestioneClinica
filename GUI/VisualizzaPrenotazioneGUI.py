@@ -17,7 +17,7 @@ class VisualizzaPrenotazioneGUI(QDialog):
     def stampaModifica(self):
         self.dataOraScelta=self.modificaPrenotazione.stampa()
         self.prenotazione=Segreteria.ricercaPrenotazione(self.dataOraScelta)
-        self.pushButton.clicked.connect(self.prendiPrenotazione)
+        self.pushButton.clicked.connect(self.apriPrenotazione)
         self.pushButton_2.clicked.connect(self.close)
 
     def apriPrenotazione(self,prenotazione):
@@ -28,5 +28,5 @@ class VisualizzaPrenotazioneGUI(QDialog):
         self.textEdit=prenotazione.note
 
     def stampa(self):
-        self.stampa()
+        self.show()
         self.pushButton.clicked.connect(self.close)

@@ -1,9 +1,12 @@
 import datetime
 
-from PyQt5.uic.properties import QtWidgets
+#from PyQt5.uic.properties import QtWidgets
 
-from GUI.NuovaPrenotazioneGUI import PrenotazioneGUI
-
+#from Amministrazione.Sistema import Sistema
+from Amministrazione import Sistema
+from GUI.NuovaPrenotazioneGUI import NuovaPrenotazioneGUI
+from datetime import timedelta
+from datetime import datetime
 from Servizio import Prenotazione
 
 
@@ -17,7 +20,9 @@ class Cliente:
         self.codiceFiscale = ""
         self.id = -1
         self.messaggio = ""
-        self.prenotazione
+        self.prenotazione = Prenotazione
+        self.promemoria
+        self.listaPrenotazioniCliente = []
 
     def inserisciNomeCognome (self, nome, cognome):
            if nome.isalpha() and cognome.isalpha():
@@ -81,19 +86,33 @@ class Cliente:
 
     def richiediPrenotazione(self, listaPrenotazioni, listaDottori):
         self.prenotazione = Prenotazione
-        delta = datetime.time(minute=15)
+        #delta = datetime.time(minute=15)
+        lista=[]
         for dottore in listaDottori:
             if dottore.nomeCognome == self.nomeDottore:
-                lista = dottore.orarioLavoro
-        for contatore in range(0, 24):
-            contatore += 1
-            lista.append(lista.index(contatore) + delta)
-            listaPrenotate = 0
+                lista.append(dottore.orarioLavoro)
+        for k in range(0, 24):
+            lista.append(lista[len(lista)-1]+ timedelta(minutes=15))
+        listaPrenotate = []
         for prenotazione in listaPrenotazioni:
             listaPrenotate.append(prenotazione.dataOra)
         listaFinale = lista - listaPrenotate
-        x=PrenotazioneGUI(listaFinale,prenotazione)
-        pass
+        x =self.prenotazione()
+        appoggio = NuovaPrenotazioneGUI(listaFinale)
+        if appoggio.stampa()==None:
+            pass
+        else:
+            x.dataOra,appoggio2, x.note =  appoggio.stampa()
+            if appoggio2=='Certificato':
+                x.certificatoMedico = True
+            elif appoggio2=='Ricetta':
+                x.ricettaMedica=True
+            else:
+                x.visitaGenerica= True
+            x.cliente=self.nomeCognome
+            x.dottore=self.nomeDottore
+            Sistema.listaPrenotazioni.append(x)
+
 
 
 
@@ -112,3 +131,13 @@ class Cliente:
         listaFinale = lista-listaPrenotate
 
         # self.prenotazione.orario=Grafica.show(listaFinale)
+
+
+    def promemoria (self):
+        if (Sistema.invioPromemoria(self.listaPrenotazioniCliente)):
+            self.promemoria = "Il tuo appuntamento è domani"
+
+
+
+
+
