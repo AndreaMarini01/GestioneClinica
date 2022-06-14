@@ -7,7 +7,7 @@ class CertificatoMedico(Documento):
 
     def __init__(self):
         super().__init__(self)
-        self.prezzo=0
+        self.prezzo=25
 
     def compilaCertificato(self,nomePaziente,nomeCognomeDottore,dataRilascio):
         self.CompilaDocumento(self,nomePaziente,nomeCognomeDottore,dataRilascio)

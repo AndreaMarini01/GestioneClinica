@@ -4,6 +4,7 @@ import datetime
 
 #from Amministrazione.Sistema import Sistema
 from Amministrazione import Sistema
+from Amministrazione.Segreteria import Segreteria
 from GUI.NuovaPrenotazioneGUI import NuovaPrenotazioneGUI
 from datetime import timedelta
 from datetime import datetime
@@ -23,6 +24,7 @@ class Cliente:
         self.prenotazione = Prenotazione
         self.promemoria
         self.listaPrenotazioniCliente = []
+
 
     def inserisciNomeCognome (self, nome, cognome):
            if nome.isalpha() and cognome.isalpha():
@@ -60,6 +62,21 @@ class Cliente:
         else :
             return False
 
+    def dizio(self):
+        return {
+        'nome ':self.nomeCognome,
+        'doc':self.nomeDottore,
+        'pass':self.password,
+        'email':self.email ,
+        'num.Tel':self.numeroDiTelefono ,
+        'codice fisc.':self.codiceFiscale ,
+        'id':self.id,
+        'msg':self.messaggio ,
+        'prenotazione':self.prenotazione,
+        'promemoria':self.promemoria,
+        'lista':self.listaPrenotazioniCliente
+        }
+
     def inserisciPassword (self, password):
         self.password = password
 
@@ -82,7 +99,9 @@ class Cliente:
         return self.numeroDiTelefono
 
     def registrazione (self):
-        pass
+        ....
+        Segreteria.salvaClienti()
+
 
     def richiediPrenotazione(self, listaPrenotazioni, listaDottori):
         self.prenotazione = Prenotazione
@@ -112,6 +131,7 @@ class Cliente:
             x.cliente=self.nomeCognome
             x.dottore=self.nomeDottore
             Sistema.listaPrenotazioni.append(x)
+            Sistema.salvaPrenotazioni(x.stampaPrenotazione)
 
 
 

@@ -1,5 +1,5 @@
 import datetime
-
+import pickle
 
 from Servizio import Dottore
 
@@ -30,6 +30,18 @@ class Sistema:
             return True
         else:
             return False
+
+    def leggiPrenotazioni(self):
+        with open('dati/Prenotazioni.pickle', 'rb+') as f:
+            self.listaPrenotazioni = pickle.load(f)
+
+    def salvaPrenotazioni(self):
+        appoggio = {}
+        for prenotazione in self.listaPrenotazioni:
+            appoggio += prenotazione.stampaPrenotazione()
+        with open('dati/Prenotazioni.pickle', 'wb+') as f:
+            pickle.dump(appoggio, f, pickle.HIGHEST_PROTOCOL)
+
 
 
 

@@ -1,5 +1,6 @@
 from datetime import datetime, time
 
+from Amministrazione.Segreteria import Segreteria
 from Servizio.CertificatoMalattia import CertificatoMalattia
 from Servizio.CertificatoMedicoAgonistico import CertificatoAgonistico
 from Servizio.CertificatoSanaRobustaCostituzione import CertificatoSanaRobustaCostituzione
@@ -39,7 +40,7 @@ class Dottore:
         self.ClienteAttuale=Segreteria.ricercaCliente(appoggio2.nomeCliente)
 
     def compilaCertificato(self):
-        tipo=grafica.tipoCertificato()
+        tipo = grafica.tipoCertificato()
         if tipo=='certificato di malattia':
             self.documento=CertificatoMalattia()
         else:
@@ -48,6 +49,8 @@ class Dottore:
             else:
                 self.documento=CertificatoAgonistico()
         self.certificatoMedico.compilaCertificato(self.nomeCognome, self.clienteAttuale.nomeCognome, datetime.now())
+        Segreteria.appoggioPrezzo = self.documento.prezzo
+
 
     def prescriviFarmaco(self):
         self.documento.compilaRicetta(self.clienteAttuale.nomeCognome,self.nomeCognome,datetime.now(),grafica.compilaRicetta())

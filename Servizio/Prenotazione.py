@@ -41,3 +41,15 @@ class Prenotazione:
     def getTipoAppuntamento(self):
         #return self.tipoAppuntamento
         pass
+
+    def stampaPrenotazione(self):
+        return {
+            'Certificato Medico': self.certificatoMedico,
+            'Cliente' : self.cliente,
+            'Data ed Ora': self.dataOra,
+            'Dottore' : self.dottore,
+            'Durata della Visita': self.durataVisita,
+            'Note':self.note,
+            'Ricetta Medica':self.ricettaMedica,
+            'Visita Generica':self.visitaGenerica
+        }
