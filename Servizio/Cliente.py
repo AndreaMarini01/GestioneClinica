@@ -20,7 +20,7 @@ class Cliente:
         self.numeroDiTelefono = ""
         self.codiceFiscale = ""
         self.id = -1
-        self.messaggio = ""
+        self.messaggio = []
         self.prenotazione = Prenotazione
         self.promemoria
         self.listaPrenotazioniCliente = []
