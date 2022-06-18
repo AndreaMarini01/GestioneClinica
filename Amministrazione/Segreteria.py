@@ -117,7 +117,7 @@ class Segreteria:
                     self.listaDottori[i].OrarioLavoro[j] = datetime.time(hour=10,minute=0)
 
     def pubblicaAnnuncio(self):
-        annuncio=scriviAnnuncioGUI()
+        annuncio=scriviMessaggioGUI()
         dizio={'annuncio': annuncio}
         with open('dati/annunci.pickle', 'wb+') as f:
             pickle.dump(dizio, f, pickle.HIGHEST_PROTOCOL)
@@ -137,7 +137,7 @@ class Segreteria:
         else :
             self.errore()
 
-    def leggiCertificato(self):
+    def leggiRicetta(self):
         if os.path.isfile('dati/Ricetta.pickle'):
             with open('dati/Ricetta.pickle', 'rb+') as f:
                 ricetta = pickle.load(f)
@@ -146,7 +146,7 @@ class Segreteria:
             self.errore()
 
     def visualizzaCliente(self):
-        risposta=visualizzaClienteGui()
+        risposta=sceltaVisualizzaClienteGUI()
         listaClientiDottore=[]
         if risposta == True:
             dottoreSelezionato=selezionaDottoreGUI()
@@ -155,7 +155,7 @@ class Segreteria:
                     listaClientiDottore.append(cliente)
             visualizzaClientiListaGUI(listaClientiDottore)
         else:
-            cliente=selezionaClientiListaGUI(self.listaClienti)
+            cliente=selezionaClienteGUI(self.listaClienti)
             if cliente!=None
                 visualizzaClienteSingoloGUI(cliente)
 
