@@ -7,37 +7,17 @@
     <x>0</x>
     <y>0</y>
     <width>622</width>
-    <height>485</height>
+    <height>327</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Visualizza Prenotazioni</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>40</y>
-     <width>271</width>
-     <height>161</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Visualizza Prenotazioni per Giorno</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>40</y>
+     <x>320</x>
+     <y>70</y>
      <width>291</width>
      <height>161</height>
     </rect>
@@ -57,14 +37,14 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>230</y>
-     <width>581</width>
-     <height>131</height>
+     <y>70</y>
+     <width>281</width>
+     <height>161</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>16</pointsize>
+     <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -76,8 +56,8 @@
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>430</y>
+     <x>470</x>
+     <y>260</y>
      <width>93</width>
      <height>28</height>
     </rect>
