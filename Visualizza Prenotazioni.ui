@@ -6,54 +6,78 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>534</width>
-    <height>279</height>
+    <width>622</width>
+    <height>485</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Scelta Visualizza Clienti</string>
+   <string>Visualizza Prenotazioni</string>
   </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>50</y>
-     <width>201</width>
-     <height>151</height>
+     <x>20</x>
+     <y>40</y>
+     <width>271</width>
+     <height>161</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>11</pointsize>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
-    <string>Visualizza Tutti i Clienti</string>
+    <string>Visualizza Prenotazioni per Giorno</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>50</y>
-     <width>231</width>
-     <height>151</height>
+     <x>310</x>
+     <y>40</y>
+     <width>291</width>
+     <height>161</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
-    <string>Visualizza Clienti per Dottore</string>
+    <string>Visualizza Prenotazioni per Dottore</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>20</x>
      <y>230</y>
+     <width>581</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Visualizza Tutte le Prenotazioni</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>430</y>
      <width>93</width>
      <height>28</height>
     </rect>
