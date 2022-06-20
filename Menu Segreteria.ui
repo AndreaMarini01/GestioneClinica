@@ -10,6 +10,13 @@
     <height>694</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Menù Segreteria</string>
   </property>
@@ -24,13 +31,13 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>9</pointsize>
+     <pointsize>11</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="text">
-    <string>Modifica/Elimina Cartella Clinica</string>
+    <string>Elimina Cartella Clinica</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
@@ -44,7 +51,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>9</pointsize>
+     <pointsize>11</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -64,13 +71,13 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>9</pointsize>
+     <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="text">
-    <string>Modifica, Visualizza, Elimina Prenotazione</string>
+    <string>Visualizza, Elimina Prenotazione</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_4">
@@ -104,7 +111,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>10</pointsize>
+     <pointsize>12</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
